@@ -108,18 +108,15 @@ function playSound() {
   // Add click event to numbers
   for (var i = 0, l = nums.length; i < l; i++) {
     nums[i].onclick = setNum;
-    nums.onclick = playSound();
   }
 
   // Add click event to operators
   for (var i = 0, l = ops.length; i < l; i++) {
     ops[i].onclick = moveNum;
-    onclick = playSound();
   }
 
   // Add click event to equal sign
   equals.onclick = displayNum;
-  onclick = playSound();
 
   // Add click event to clear button
   el("#clear").onclick = clearAll;
