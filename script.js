@@ -24,7 +24,7 @@ function playSoundLoad() {
   };
 
   // Variables
-  var viewer = el("#viewer"), 
+  var display = el("#display"), 
     inhis = el("inhis"), 
     equals = el("#equals"), 
     nums = el(".num"), 
@@ -44,16 +44,18 @@ function playSoundLoad() {
       theNum += this.getAttribute("data-num");
     }
     playSoundPick();
-    viewer.innerHTML = theNum;
+    display.innerHTML = theNum;
   };
 
   // Operator
   var moveNum = function() {
     playSoundPick();
+    if(oldNum!==""&theNum!==""){
+      displayNum();
+    }
     oldNum = theNum;
     theNum = "";
     operator = this.getAttribute("data-ops");
-
     equals.setAttribute("data-result", "");
   };
 
@@ -71,24 +73,28 @@ function playSoundLoad() {
         resultNum = oldNum + theNum;
         ope = "+";
         document.getElementById("inhis").innerHTML = oldNum + " " + ope + " " + theNum ;
+        operator = " ";
         break;
 
       case "minus":
         resultNum = oldNum - theNum;
         ope = "-";
         document.getElementById("inhis").innerHTML = oldNum + " " + ope + " " + theNum ;
+        operator = " ";
         break;
 
       case "times":
         resultNum = oldNum * theNum;
         ope = "*";
         document.getElementById("inhis").innerHTML = oldNum + " " + ope + " " + theNum ;
+        operator = " ";
         break;
 
       case "divided by":
         resultNum = oldNum / theNum;
         ope = "/";
         document.getElementById("inhis").innerHTML = oldNum + " " + ope + " " + theNum ;
+        operator = " ";
         break;
 
         // Equal pressed without operator
@@ -111,7 +117,7 @@ function playSoundLoad() {
     }
 
     // Display
-    viewer.innerHTML = resultNum;
+    display.innerHTML = resultNum;
     equals.setAttribute("data-result", resultNum);
     
 
@@ -126,7 +132,7 @@ function playSoundLoad() {
     playSoundClear();
     oldNum = "";
     theNum = "";
-    viewer.innerHTML = "0";
+    display.innerHTML = "0";
     equals.setAttribute("data-result", resultNum);
     document.getElementById("inhis").innerHTML = 0 ;
   };
