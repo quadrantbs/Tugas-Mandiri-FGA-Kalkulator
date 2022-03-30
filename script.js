@@ -1,18 +1,22 @@
 // Sound
 function playSoundPick() {
     var sound = document.getElementById("audiopick");
+    sound.load();
     sound.play();
   }
 function playSoundClear() {
     var sound = document.getElementById("audioclear");
+    sound.load();
     sound.play();
   }
 function playSoundWrong() {
     var sound = document.getElementById("audiowrong");
+    sound.load();
     sound.play();
   }
 function playSoundLoad() {
     var sound = document.getElementById("audioload");
+    sound.load();
     sound.play();
   }
  // Get elements
