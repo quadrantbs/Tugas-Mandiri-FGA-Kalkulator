@@ -33,14 +33,17 @@ function playSoundLoad() {
     equals = el("#equals"), 
     nums = el(".num"), 
     ops = el(".ops"), 
-    theNum = "", 
-    oldNum = "", 
+    theNum = "0", 
+    oldNum = "0", 
     ope,
     resultNum, 
     operator; 
 
   //Number
   var setNum = function() {
+    if (theNum="0") {
+      theNum = ""
+    }
     if (resultNum) { 
       theNum = this.getAttribute("data-num");
       resultNum = "";
@@ -54,7 +57,7 @@ function playSoundLoad() {
   // Operator
   var moveNum = function() {
     playSoundPick();
-    if(oldNum!==""&theNum!==""){
+    if(oldNum!=="0"&theNum!=="0"){
       displayNum();
     }
     oldNum = theNum;
@@ -134,8 +137,8 @@ function playSoundLoad() {
   // Clear button
   var clearAll = function() {
     playSoundClear();
-    oldNum = "";
-    theNum = "";
+    oldNum = "0";
+    theNum = "0";
     display.innerHTML = "0";
     equals.setAttribute("data-result", resultNum);
     document.getElementById("inhis").innerHTML = 0 ;
