@@ -33,7 +33,7 @@ function playSoundLoad() {
     equals = el("#equals"), 
     nums = el(".num"), 
     ops = el(".ops"), 
-    theNum = "", 
+    theNum = "0", 
     oldNum = "0", 
     ope,
     resultNum, 
