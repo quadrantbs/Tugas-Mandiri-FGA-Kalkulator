@@ -9,7 +9,7 @@ body {
   color: #d5baa5;
   font: 300 18px/1.6 "Futura", sans-serif;
   margin: 0;
-  padding: 10em 0 2em;
+  padding: 5em 0 2em;
   text-align: center;
 }
 
@@ -26,7 +26,7 @@ h1 {
   width: 12em;
 }
 
-.viewer {
+.display {
   color: #afa7c6;
   line-height: 3em;
   text-align: right;
@@ -34,6 +34,7 @@ h1 {
   overflow: hidden;
   width: 8.5em;
   height: 3em;
+  transition: 0.5s;
 }
 .history {
   color: rgba(175, 167, 198, 0.5);
@@ -80,6 +81,7 @@ footer {
   bottom: 0;
   width: 100%;
   text-align: center;
+  margin-top: 20px;
 }
 footer a {
   color: #afa7c6;
