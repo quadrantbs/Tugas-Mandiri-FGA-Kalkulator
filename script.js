@@ -41,9 +41,6 @@ function playSoundLoad() {
 
   //Number
   var setNum = function() {
-    if (theNum="0") {
-      theNum = ""
-    }
     if (resultNum) { 
       theNum = this.getAttribute("data-num");
       resultNum = "";
